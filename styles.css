@@ -85,23 +85,30 @@ textarea {
     flex: 1 1 100%;
 }
 
+.categories .category label {
+    font-weight: normal;
+}
+
+.categories .category {
+    display: flex;
+    align-items: center;
+}
+
 .categories {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
 }
 
-/* CSS actualizat pentru formular */
-
 .category {
     flex: 1 1 calc(50% - 15px);
     margin-bottom: 10px;
     display: flex;
-    align-items: center; /* Aliniere verticală */
+    align-items: center;
 }
 
 .category label {
-    margin-left: 5px; /* Spațiu mic între radio button și text */
+    margin-left: 5px;
 }
 
 .g-recaptcha {
@@ -132,7 +139,7 @@ textarea {
 .disclaimer {
     font-size: 12px;
     color: #666;
-    text-align: left; /* Aliniere la stânga */
+    text-align: center;
     margin-top: 20px;
 }
 
@@ -199,4 +206,30 @@ footer p {
 
 .popup button:hover {
     background-color: #0056b3;
+}
+
+#gdpr {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#gdpr:checked {
+    background-color: #007BFF;
+}
+
+#gdpr:checked::after {
+    content: '\2714';
+    font-size: 14px;
+    color: white;
+    position: relative;
+    left: 5px;
+    top: -1px;
+
 }
