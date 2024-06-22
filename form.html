@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formular Jurat Gala Voluntariatului</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <form action="process_form.php" method="post">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="name">Numele tau:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Telefonul tau:</label>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="social">Facebook/Instagram/Linkedin:</label>
+        <input type="text" id="social" name="social"><br><br>
+
+        <label>In cadrul carei categorii ti-ai dori sa jurizezi:</label><br>
+        <input type="radio" id="categorie1" name="category" value="categorie1" required>
+        <label for="categorie1">Categorie 1</label><br>
+        <input type="radio" id="categorie2" name="category" value="categorie2">
+        <label for="categorie2">Categorie 2</label><br>
+        <!-- Adauga mai multe categorii dupa necesitate -->
+        <br>
+
+        <label for="recommendation">Ce te recomanda pentru a juriza in cadrul categoriei alese:</label><br>
+        <textarea id="recommendation" name="recommendation" required></textarea><br><br>
+
+        <label for="motivation">Care este motivatia ta de a juriza:</label><br>
+        <textarea id="motivation" name="motivation" required></textarea><br><br>
+
+        <label for="criteria">Ce criterii consideri cele mai importante atunci cand evaluezi voluntarii/organizatiile:</label><br>
+        <textarea id="criteria" name="criteria" required></textarea><br><br>
+
+        <label for="project">Care este proiectul/evenimentul organizat de tine sau din viața ta cu care te mândrești?</label><br>
+        <textarea id="project" name="project" required></textarea><br><br>
+
+        <label for="additional">Nu te-am intrebat, dar... (optional):</label><br>
+        <textarea id="additional" name="additional"></textarea><br><br>
+
+        <label for="gdpr">
+            <input type="checkbox" id="gdpr" name="gdpr" required>
+            Acord GDPR pentru prelucrarea datelor
+        </label><br><br>
+
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div><br>
+
+        <input type="submit" value="Trimite">
+    </form>
+</body>
+</html>
