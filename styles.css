@@ -55,7 +55,7 @@ h1 {
 form {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px; /* Spațiu între rânduri */
+    gap: 15px;
 }
 
 label {
@@ -65,7 +65,7 @@ label {
 }
 
 input[type="text"], input[type="email"], input[type="tel"], textarea {
-    width: calc(100% - 20px); /* Ajustare pentru margin */
+    width: calc(100% - 20px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -73,11 +73,11 @@ input[type="text"], input[type="email"], input[type="tel"], textarea {
 
 textarea {
     resize: vertical;
-    height: 100px;
+    height: 50px;
 }
 
 .half-width {
-    flex: 1 1 calc(50% - 7.5px);
+    flex: 1 1 calc(40% - 7.5px);
     gap: 15px;
 }
 
