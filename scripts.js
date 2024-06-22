@@ -48,22 +48,3 @@ function submitForm(event) {
     event.preventDefault();
     openPopup('Am primit înscrierea ta. Vom reveni cu un răspuns către tine între 1-10 sept. 2024');
 }
-
-
-function loadPopupContent(url) {
-    fetch(url)
-        .then(response => response.text())
-        .then(data => {
-            var popupContainer = document.getElementById('popup-container');
-            popupContainer.innerHTML = data;
-            openPopupContent();
-        })
-        .catch(error => console.error('Eroare încărcare conținut popup:', error));
-}
-
-function openPopupContent() {
-    var popupContainer = document.getElementById('popup-container');
-    popupContainer.style.display = 'block';
-    var overlay = document.getElementById('popup-overlay');
-    overlay.style.display = 'block';
-}
