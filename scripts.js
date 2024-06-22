@@ -50,3 +50,20 @@ function submitForm(event) {
 }
 
 
+function loadPopupContent(url) {
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            var popupContainer = document.getElementById('popup-container');
+            popupContainer.innerHTML = data;
+            openPopupContent();
+        })
+        .catch(error => console.error('Eroare încărcare conținut popup:', error));
+}
+
+function openPopupContent() {
+    var popupContainer = document.getElementById('popup-container');
+    popupContainer.style.display = 'block';
+    var overlay = document.getElementById('popup-overlay');
+    overlay.style.display = 'block';
+}
