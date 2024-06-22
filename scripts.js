@@ -19,24 +19,34 @@ function updateCountdown() {
 
 const countdownInterval = setInterval(updateCountdown, 1000);
 
-function openPopup() {
-    const overlay = document.getElementById('popup-overlay');
-    const popup = document.getElementById('popup-container');
+function openPopup(message) {
+    var popup = document.createElement('div');
+    popup.classList.add('popup');
+    popup.innerHTML = `
+        <p>${message}</p>
+        <button onclick="closePopup()">Închide</button>
+    `;
 
-    fetch('popup-content.html')
-        .then(response => response.text())
-        .then(data => {
-            popup.innerHTML = data;
-            overlay.style.display = 'flex';
-            popup.style.display = 'block';
-        })
-        .catch(error => console.error('Error loading popup content:', error));
+    document.body.appendChild(popup);
+
+    var overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    overlay.addEventListener('click', closePopup);
+    document.body.appendChild(overlay);
 }
 
 function closePopup() {
-    const overlay = document.getElementById('popup-overlay');
-    const popup = document.getElementById('popup-container');
+    var popup = document.querySelector('.popup');
+    var overlay = document.querySelector('.overlay');
 
-    overlay.style.display = 'none';
-    popup.style.display = 'none';
+    if (popup && overlay) {
+        popup.remove();
+        overlay.remove();
+    }
 }
+function submitForm(event) {
+    event.preventDefault();
+    openPopup('Am primit înscrierea ta. Vom reveni cu un răspuns către tine între 1-10 sept. 2024');
+}
+
+
