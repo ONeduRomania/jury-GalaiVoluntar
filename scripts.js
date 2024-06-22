@@ -9,7 +9,7 @@ function updateCountdown() {
     const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    countdownElement.innerHTML = `${days} zile  ${hours} ore  ${minutes} minute   ${seconds} secunde`;
 
     if (timeLeft < 0) {
         clearInterval(countdownInterval);
