@@ -18,33 +18,3 @@ function updateCountdown() {
 }
 
 const countdownInterval = setInterval(updateCountdown, 1000);
-
-function openPopup(message) {
-    var popup = document.createElement('div');
-    popup.classList.add('popup');
-    popup.innerHTML = `
-        <p>${message}</p>
-        <button onclick="closePopup()">Închide</button>
-    `;
-
-    document.body.appendChild(popup);
-
-    var overlay = document.createElement('div');
-    overlay.classList.add('overlay');
-    overlay.addEventListener('click', closePopup);
-    document.body.appendChild(overlay);
-}
-
-function closePopup() {
-    var popup = document.querySelector('.popup');
-    var overlay = document.querySelector('.overlay');
-
-    if (popup && overlay) {
-        popup.remove();
-        overlay.remove();
-    }
-}
-function submitForm(event) {
-    event.preventDefault();
-    openPopup('Am primit înscrierea ta. Vom reveni cu un răspuns către tine între 1-10 sept. 2024');
-}
