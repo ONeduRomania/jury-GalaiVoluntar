@@ -20,5 +20,23 @@ function updateCountdown() {
 const countdownInterval = setInterval(updateCountdown, 1000);
 
 function openPopup() {
-    alert("Eligibilitatea: Termenul de voluntariat nu le este necunoscut (activează sau au activat într-un ONG în ultimii 5 ani). Au avut o activitate de minim 3 luni de voluntariat în domeniul vizat de categoria aleasă. Sunt disponibili pentru training și pentru jurizare în perioada oct. - noi. 2024. Jurizarea se desfășoară individual, online, printr-o platformă securizată a Asociației ONedu. Se angajează să asigure confidențialitatea aplicațiilor și a punctajelor acordate și vor semna acorduri de confidențialitate în acest sens.");
+    const overlay = document.getElementById('popup-overlay');
+    const popup = document.getElementById('popup-container');
+
+    fetch('popup-content.html')
+        .then(response => response.text())
+        .then(data => {
+            popup.innerHTML = data;
+            overlay.style.display = 'flex';
+            popup.style.display = 'block';
+        })
+        .catch(error => console.error('Error loading popup content:', error));
+}
+
+function closePopup() {
+    const overlay = document.getElementById('popup-overlay');
+    const popup = document.getElementById('popup-container');
+
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
 }
