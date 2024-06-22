@@ -54,7 +54,7 @@ if ($result_check->num_rows > 0) {
                     Aplicația ta are numărul de înregistrare $verification_code. Te ținem la curent cât ai zice FACEM BINE.\n\n
                     
                     Cu drag,\n
-                    Echipa Gala Voluntariatului"
+                    Echipa Gala Voluntariatului";
 
         $headers = "From: Gala Voluntariatului<aplicatii@ivoluntar.org>";
 
