@@ -55,7 +55,7 @@ h1 {
 form {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 15px; /* Spațiu între rânduri */
 }
 
 label {
@@ -77,7 +77,7 @@ textarea {
 }
 
 .half-width {
-    flex: 1 1 calc(50% - 15px);
+    flex: 1 1 calc(50% - 10px); /* Lățime și spațiu între câmpuri */
 }
 
 .full-width {
