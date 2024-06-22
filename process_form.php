@@ -49,23 +49,14 @@ if ($result_check->num_rows > 0) {
 
     if ($conn->query($sql_insert) === TRUE) {
         $to = $email . ', aplicatii@ivoluntar.org';
-        $subject = "Confirmare aplicare jurat Gala Voluntariatului";
-        $message = "Mulțumim pentru aplicarea ca jurat la Gala Voluntariatului.\n\n"
-                 . "Datele tale:\n"
-                 . "Nume: $first_name $last_name\n"
-                 . "Email: $email\n"
-                 . "Telefon: $phone\n"
-                 . "Social: $social\n"
-                 . "Oraș: $city\n"
-                 . "Categorie: $category\n"
-                 . "Recomandare: $recommendation\n"
-                 . "Motivație: $motivation\n"
-                 . "Criterii: $criteria\n"
-                 . "Proiect: $project\n"
-                 . "Informații suplimentare: $additional\n\n"
-                 . "Cod unic de verificare: $verification_code";
+        $subject = "Ai aplicat cu succes - Gala Voluntariatului";
+        $message = "Salutare,\n  $first_name, îți mulțumim că ai aplicat să faci parte din juriul Galei Voluntariatului 2024. Revenim către tine cu vești în perioada 1-10 septembrie 2024.\n
+                    Aplicația ta are numărul de înregistrare $verification_code. Te ținem la curent cât ai zice FACEM BINE.\n\n
+                    
+                    Cu drag,\n
+                    Echipa Gala Voluntariatului"
 
-        $headers = "From: contact@ivoluntar.org";
+        $headers = "From: Gala Voluntariatului<aplicatii@ivoluntar.org>";
 
         mail($to, $subject, $message, $headers);
 
