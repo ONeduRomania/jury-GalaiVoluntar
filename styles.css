@@ -77,7 +77,8 @@ textarea {
 }
 
 .half-width {
-    flex: 1 1 calc(50% - 7.5px); /* Lățime și spațiu între câmpuri */
+    flex: 1 1 calc(50% - 7.5px);
+    gap: 15px;
 }
 
 .full-width {
