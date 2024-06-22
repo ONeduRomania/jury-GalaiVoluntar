@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formular Jurat Gala Voluntariatului</title>
+    <title>Call jurați 2024 - Gala Voluntariatului </title>
+     <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
@@ -40,7 +41,7 @@
                 <input type="tel" id="phone" name="phone" required>
             </div>
             <div class="half-width">
-                <label for="social">Facebook/Instagram/Linkedin:</label>
+                <label for="social">Facebook/Instagram:</label>
                 <input type="text" id="social" name="social">
             </div>
             <div class="half-width">
@@ -51,26 +52,33 @@
                 <label>În cadrul cărei categorii ți-ai dori să jurizezi:</label>
                 <div class="categories">
                     <div class="category">
-                        <input type="radio" id="categorie1" name="category" value="categorie1" required>
-                        <label for="categorie1">Categorie 1</label>
+                        <input type="radio" id="educational-tineret" name="category" value="educational-tineret" required>
+                        <label for="educational-tineret">Educațional și tineret</label>
+                        <input type="radio" id="social-umanitar" name="category" value="social-umanitar" required>
+                        <label for="social-umanitar">Social și umanitar</label>
+                        <input type="radio" id="arta" name="category" value="arta" required>
+                        <label for="arta">Artă și cultură</label>
                     </div>
                     <div class="category">
-                        <input type="radio" id="categorie2" name="category" value="categorie2">
-                        <label for="categorie2">Categorie 2</label>
+                        <input type="radio" id="mediu" name="category" value="mediu">
+                        <label for="mediu">Sănătate, mediu și protecția animalelor</label>
+                        <input type="radio" id="corporatist" name="category" value="corporatist">
+                        <label for="corporatist">Voluntarul corporatist al anului</label>
+                        <input type="radio" id="ong" name="category" value="ong">
+                        <label for="ong">Organizația anului și coordonatorul de voluntari al anului</label>
                     </div>
-                    <!-- Adaugă mai multe categorii după necesitate -->
                 </div>
             </div>
             <div class="full-width">
-                <label for="recommendation">Ce te recomandă pentru a juriza în cadrul categoriei alese:</label>
+                <label for="recommendation">Ce te recomandă pentru a juriza în cadrul categoriei alese?</label>
                 <textarea id="recommendation" name="recommendation" required></textarea>
             </div>
             <div class="full-width">
-                <label for="motivation">Care este motivația ta de a juriza:</label>
+                <label for="motivation">Care este motivația ta de a juriza?</label>
                 <textarea id="motivation" name="motivation" required></textarea>
             </div>
             <div class="full-width">
-                <label for="criteria">Ce criterii consideri cele mai importante atunci când evaluezi voluntarii/organizațiile:</label>
+                <label for="criteria">Ce criterii consideri cele mai importante atunci când evaluezi voluntarii/organizațiile?</label>
                 <textarea id="criteria" name="criteria" required></textarea>
             </div>
             <div class="full-width">
@@ -78,16 +86,18 @@
                 <textarea id="project" name="project" required></textarea>
             </div>
             <div class="full-width">
-                <label for="additional">Nu te-am întrebat, dar... (optional):</label>
+                <label for="additional">Nu te-am întrebat, dar... (opțional):</label>
                 <textarea id="additional" name="additional"></textarea>
             </div>
             <div class="full-width">
                 <label for="gdpr">
                     <input type="checkbox" id="gdpr" name="gdpr" required>
-                    Acord GDPR pentru prelucrarea datelor
+                    Asociația ONedu, în calitatea sa de organizator și reprezentant legal al Centrului iVoluntar, gestionează și administrează datele tale cu caracter personal 
+                    transmise în cadrul prezentului formular. Declar că sunt de acord cu procesarea datelor cu caracter personal de către Asociația ONedu și 
+                    dezvăluirea acestora doar către membrii echipei de jurizare a prezentului call și în situațiile cerute de lege.
                 </label>
             </div>
-            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+            <div class="g-recaptcha" data-sitekey="6Lel9v4pAAAAAIKFDzGGhkvBSw45IZF9ZnEt2ATX"></div>
             <div class="full-width submit-container">
                 <input type="submit" value="Trimite" class="submit-button">
                 
@@ -97,10 +107,11 @@
             Disclaimer: Se va alege doar una dintre toate persoanele înscrise în acest call, pe baza evaluării echipei de organizare a Galei Voluntariatului. Selectarea juraților va urmări să existe o diversitate a tipurilor de preocupări și interese și capacitatea aplicanților de a înțelege și evalua o aplicație în baza propriei activități, prezentate în formularul de înscriere.
         </p>
         <footer>
-            <a href="#">Regulament</a> |
-            <a href="#">Termenii și Condițiile</a> |
-            <a href="#">Politica de confidențialitate</a> |
-            <a href="#">Protecția datelor cu caracter personal</a>
+            <a href="https://gala.ivoluntar.org/regulament/">Regulament</a> |
+            <a href="https://ivoluntar.org/termenii-si-conditiile/">Termenii și Condițiile</a> |
+            <a href="https://ivoluntar.org/politica-de-confidentialitate/">Politica de confidențialitate</a> |
+            <a href="https://ivoluntar.org/protectia-datelor-cu-caracter-personal/">Protecția datelor cu caracter personal</a>
+            <br>
             <p>O soluție administrată de Asociația ONedu</p>
         </footer>
     </div>
