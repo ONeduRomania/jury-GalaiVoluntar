@@ -5,52 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular Jurat Gala Voluntariatului</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            width: 150px;
+        }
+        header a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        header a:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        .description {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .timer {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF0000;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .half-width {
+            flex: 1 1 calc(50% - 15px);
+        }
+        .full-width {
+            flex: 1 1 100%;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .category {
+            flex: 1 1 calc(50% - 15px);
+            margin-bottom: 10px;
+        }
+        .g-recaptcha {
+            margin: 20px 0;
+        }
+        .disclaimer {
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 12px;
+        }
+        footer a {
+            color: #007BFF;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <form action="process_form.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo Gala Voluntariatului">
+            <a href="https://gala.ivoluntar.org">← Înapoi la Gala Voluntariatului</a>
+        </header>
+        <h1>Căutăm ONGiști să jurizeze activitatea voluntarilor din România</h1>
+        <div class="timer" id="countdown"></div>
+        <p class="description">
+            Gala Voluntariatului este cel mai mare eveniment național de recunoaștere și promovare a voluntarilor din România, avându-și începuturile în anul 2022, la inițiativa Centrului iVoluntar și a Asociației ONedu. Juriul este format din ONGiști, jurnaliști, lideri, formatori de opinie, specialiști, cercetători, sociologi ș.a.m.d.
+            <br><br>
+            Anul acesta ne dorim să implicăm și mai mult voluntari care activează în comunități locale în procesul de jurizare, astfel că persoanele interesate care activează în domeniul vizat de categoria aleasă se pot înscrie pentru a juriza una dintre categoriile Galei Voluntariatului 2024.
+            <br><br>
+            Sunt eligibile următoarele persoane:
+            <ul>
+                <li>Termenul de voluntariat nu le este necunoscut (activează sau au activat într-un ONG în ultimii 5 ani)</li>
+                <li>Au avut o activitate de minim 3 luni de voluntariat în domeniul vizat de categoria aleasă</li>
+                <li>Sunt disponibili pentru training și pentru jurizare în perioada oct. - noi. 2024. Jurizarea se desfășoară individual, online, printr-o platformă securizată a Asociației ONedu</li>
+                <li>Se angajează să asigure confidențialitatea aplicațiilor și a punctajelor acordate și vor semna acorduri de confidențialitate în acest sens</li>
+            </ul>
+        </p>
+        <form action="process_form.php" method="post">
+            <div class="half-width">
+                <label for="first_name">Prenume:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+            <div class="half-width">
+                <label for="last_name">Nume:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+            <div class="half-width">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="half-width">
+                <label for="phone">Telefon:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="half-width">
+                <label for="social">Facebook/Instagram/Linkedin:</label>
+                <input type="text" id="social" name="social">
+            </div>
+            <div class="half-width">
+                <label for="city">Oraș:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="full-width">
+                <label>În cadrul cărei categorii ți-ai dori să jurizezi:</label>
+                <div class="categories">
+                    <div class="category">
+                        <input type="radio" id="categorie1" name="category" value="categorie1" required>
+                        <label for="categorie1">Categorie 1</label>
+                    </div>
+                    <div class="category">
+                        <input type="radio" id="categorie2" name="category" value="categorie2">
+                        <label for="categorie2">Categorie 2</label>
+                    </div>
+                    <!-- Adaugă mai multe categorii după necesitate -->
+                </div>
+            </div>
+            <div class="full-width">
+                <label for="recommendation">Ce te recomandă pentru a juriza în cadrul categoriei alese:</label>
+                <textarea id="recommendation" name="recommendation" required></textarea>
+            </div>
+            <div class="full-width">
+                <label for="motivation">Care este motivația ta de a juriza:</label>
+                <textarea id="motivation" name="motivation" required></textarea>
+            </div>
+            <div class="full-width">
+                <label for="criteria">Ce criterii consideri cele mai importante atunci când evaluezi voluntarii/organizațiile:</label>
+                <textarea id="criteria" name="criteria" required></textarea>
+            </div>
+            <div class="full-width">
+                <label for="project">Care este proiectul/evenimentul organizat de tine sau din viața ta cu care te mândrești?</label>
+                <textarea id="project" name="project" required></textarea>
+            </div>
+            <div class="full-width">
+                <label for="additional">Nu te-am întrebat, dar... (optional):</label>
+                <textarea id="additional" name="additional"></textarea>
+            </div>
+            <div class="full-width">
+                <label for="gdpr">
+                    <input type="checkbox" id="gdpr" name="gdpr" required>
+                    Acord GDPR pentru prelucrarea datelor
+                </label>
+            </div>
+            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
+            <div class="full-width">
+                <input type="submit" value="Trimite">
+            </div>
+        </form>
+        <p class="disclaimer">
+            Disclaimer: Se va alege doar una dintre toate persoanele înscrise în acest call, pe baza evaluării echipei de organizare a Galei Voluntariatului. Selectarea juraților va urmări să existe o diversitate a tipurilor de preocupări și interese și capacitatea aplicanților de a înțelege și evalua o aplicație în baza propriei activități, prezentate în formularul de înscriere.
+        </p>
+        <footer>
+            <a href="#">Regulament</a> | 
+            <a href="#">Termenii și Condițiile</a> | 
+            <a href="#">Politica de confidențialitate</a> | 
+            <a href="#">Protecția datelor cu caracter personal</a>
+            <p>O soluție administrată de Asociația ONedu</p>
+        </footer>
+    </div>
+    <script>
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            const targetDate = new Date('September 1, 2024 23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
 
-        <label for="name">Numele tau:</label>
-        <input type="text" id="name" name="name" required><br><br>
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        <label for="phone">Telefonul tau:</label>
-        <input type="tel" id="phone" name="phone" required><br><br>
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-        <label for="social">Facebook/Instagram/Linkedin:</label>
-        <input type="text" id="social" name="social"><br><br>
+            if (timeLeft < 0) {
+                clearInterval(countdownInterval);
+                countdownElement.innerHTML = "Terminat";
+            }
+        }
 
-        <label>In cadrul carei categorii ti-ai dori sa jurizezi:</label><br>
-        <input type="radio" id="categorie1" name="category" value="categorie1" required>
-        <label for="categorie1">Categorie 1</label><br>
-        <input type="radio" id="categorie2" name="category" value="categorie2">
-        <label for="categorie2">Categorie 2</label><br>
-        <!-- Adauga mai multe categorii dupa necesitate -->
-        <br>
-
-        <label for="recommendation">Ce te recomanda pentru a juriza in cadrul categoriei alese:</label><br>
-        <textarea id="recommendation" name="recommendation" required></textarea><br><br>
-
-        <label for="motivation">Care este motivatia ta de a juriza:</label><br>
-        <textarea id="motivation" name="motivation" required></textarea><br><br>
-
-        <label for="criteria">Ce criterii consideri cele mai importante atunci cand evaluezi voluntarii/organizatiile:</label><br>
-        <textarea id="criteria" name="criteria" required></textarea><br><br>
-
-        <label for="project">Care este proiectul/evenimentul organizat de tine sau din viața ta cu care te mândrești?</label><br>
-        <textarea id="project" name="project" required></textarea><br><br>
-
-        <label for="additional">Nu te-am intrebat, dar... (optional):</label><br>
-        <textarea id="additional" name="additional"></textarea><br><br>
-
-        <label for="gdpr">
-            <input type="checkbox" id="gdpr" name="gdpr" required>
-            Acord GDPR pentru prelucrarea datelor
-        </label><br><br>
-
-        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div><br>
-
-        <input type="submit" value="Trimite">
-    </form>
+        const countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
 </body>
 </html>
