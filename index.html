@@ -7,6 +7,7 @@
      <link rel="icon" href="logo.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <div class="container">
@@ -21,7 +22,7 @@
             <br><br>
             Anul acesta ne dorim să implicăm și mai mult voluntari care activează în comunități locale în procesul de jurizare, astfel că persoanele interesate care activează în domeniul vizat de categoria aleasă se pot înscrie pentru a juriza una dintre categoriile Galei Voluntariatului 2024.
             <br><br>
-            <a href="#" onclick="openPopup()">Vezi mai multe</a>
+            <a href="#" onclick="loadPopupContent('popup.html')">Vezi mai multe</a>
         </p>
         <form action="process_form.php" method="post" onsubmit="submitForm(event)">
             <div class="half-width">
@@ -115,9 +116,7 @@
             <p>O soluție administrată de Asociația ONedu</p>
         </footer>
     </div>
-    <div id="popup-overlay" class="overlay" onclick="closePopup()"></div>
-    <div id="popup-container" class="popup">
-    </div>
-    <script src="scripts.js"></script>
+     <div id="popup-overlay" class="overlay" onclick="closePopup()"></div>
+    <div id="popup-container" class="popup"></div>
 </body>
 </html>
