@@ -4,110 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formular Jurat Gala Voluntariatului</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header img {
-            width: 150px;
-        }
-        header a {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-        }
-        header a:hover {
-            text-decoration: underline;
-        }
-        h1 {
-            text-align: center;
-            font-size: 24px;
-        }
-        .description {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .timer {
-            text-align: center;
-            font-size: 20px;
-            font-weight: bold;
-            color: #FF0000;
-            margin-bottom: 20px;
-        }
-        form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"], input[type="email"], input[type="tel"], textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        textarea {
-            resize: vertical;
-            height: 100px;
-        }
-        .half-width {
-            flex: 1 1 calc(50% - 15px);
-        }
-        .full-width {
-            flex: 1 1 100%;
-        }
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .category {
-            flex: 1 1 calc(50% - 15px);
-            margin-bottom: 10px;
-        }
-        .g-recaptcha {
-            margin: 20px 0;
-        }
-        .disclaimer {
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-            margin-top: 20px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            font-size: 12px;
-        }
-        footer a {
-            color: #007BFF;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -122,13 +20,7 @@
             <br><br>
             Anul acesta ne dorim să implicăm și mai mult voluntari care activează în comunități locale în procesul de jurizare, astfel că persoanele interesate care activează în domeniul vizat de categoria aleasă se pot înscrie pentru a juriza una dintre categoriile Galei Voluntariatului 2024.
             <br><br>
-            Sunt eligibile următoarele persoane:
-            <ul>
-                <li>Termenul de voluntariat nu le este necunoscut (activează sau au activat într-un ONG în ultimii 5 ani)</li>
-                <li>Au avut o activitate de minim 3 luni de voluntariat în domeniul vizat de categoria aleasă</li>
-                <li>Sunt disponibili pentru training și pentru jurizare în perioada oct. - noi. 2024. Jurizarea se desfășoară individual, online, printr-o platformă securizată a Asociației ONedu</li>
-                <li>Se angajează să asigure confidențialitatea aplicațiilor și a punctajelor acordate și vor semna acorduri de confidențialitate în acest sens</li>
-            </ul>
+            <a href="#" onclick="openPopup()">Vezi mai multe</a>
         </p>
         <form action="process_form.php" method="post">
             <div class="half-width">
@@ -196,8 +88,8 @@
                 </label>
             </div>
             <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-            <div class="full-width">
-                <input type="submit" value="Trimite">
+            <div class="full-width submit-container">
+                <input type="submit" value="Trimite" class="submit-button">
             </div>
         </form>
         <p class="disclaimer">
@@ -211,27 +103,6 @@
             <p>O soluție administrată de Asociația ONedu</p>
         </footer>
     </div>
-    <script>
-        function updateCountdown() {
-            const countdownElement = document.getElementById('countdown');
-            const targetDate = new Date('September 1, 2024 23:59:59').getTime();
-            const now = new Date().getTime();
-            const timeLeft = targetDate - now;
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-            if (timeLeft < 0) {
-                clearInterval(countdownInterval);
-                countdownElement.innerHTML = "Terminat";
-            }
-        }
-
-        const countdownInterval = setInterval(updateCountdown, 1000);
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
