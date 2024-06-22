@@ -22,7 +22,7 @@
             <br><br>
             <a href="#" onclick="openPopup()">Vezi mai multe</a>
         </p>
-        <form action="process_form.php" method="post">
+        <form action="process_form.php" method="post" onsubmit="submitForm(event)">
             <div class="half-width">
                 <label for="first_name">Prenume:</label>
                 <input type="text" id="first_name" name="first_name" required>
@@ -90,6 +90,7 @@
             <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
             <div class="full-width submit-container">
                 <input type="submit" value="Trimite" class="submit-button">
+                
             </div>
         </form>
         <p class="disclaimer">
